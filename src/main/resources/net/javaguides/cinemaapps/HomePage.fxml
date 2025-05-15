@@ -1,0 +1,205 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.SeparatorMenuItem?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.FlowPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="net.javaguides.cinemaapps.Controller.HomePageController">
+   <children>
+      <ScrollPane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1280.0" vbarPolicy="NEVER" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+        <content>
+          <AnchorPane minHeight="0.0" minWidth="0.0" style="-fx-background-color: rgba(0, 0, 0, 0.84);">
+               <children>
+                  <Label alignment="CENTER" contentDisplay="CENTER" layoutX="447.0" layoutY="88.0" prefHeight="120.0" prefWidth="381.0" text="Cinema" textAlignment="CENTER" textFill="WHITE">
+                     <font>
+                        <Font name="Arial Black" size="53.0" />
+                     </font>
+                  </Label>
+                  <Label alignment="CENTER" contentDisplay="CENTER" layoutX="541.0" layoutY="54.0" prefHeight="82.0" prefWidth="163.0" text="Our" textAlignment="CENTER" textFill="#e1e1e1">
+                     <font>
+                        <Font name="Arial Black" size="53.0" />
+                     </font>
+                  </Label>
+                  <MenuBar prefHeight="33.0" prefWidth="1280.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                    <menus>
+                      <Menu mnemonicParsing="false" text="Home" />
+                      <Menu mnemonicParsing="false" text="Genre">
+                        <items>
+                          <MenuItem mnemonicParsing="false" text="Horor" />
+                              <MenuItem mnemonicParsing="false" text="Comedy" />
+                              <MenuItem mnemonicParsing="false" text="Fantasy" />
+                              <MenuItem mnemonicParsing="false" text="Live Action" />
+                              <MenuItem mnemonicParsing="false" text="Drama" />
+                              <MenuItem mnemonicParsing="false" text="Romance" />
+                        </items>
+                      </Menu>
+                        <Menu mnemonicParsing="false" text="Series">
+                          <items>
+                            <MenuItem mnemonicParsing="false" text="Series Terbaru" />
+                              <MenuItem mnemonicParsing="false" text="Ongoing" />
+                              <MenuItem mnemonicParsing="false" text="Complete" />
+                          </items>
+                        </Menu>
+                        <Menu mnemonicParsing="false" text="Settings">
+                          <items>
+                            <MenuItem mnemonicParsing="false" text="Report" />
+                              <MenuItem mnemonicParsing="false" text="Report" />
+                              <SeparatorMenuItem mnemonicParsing="false" />
+                              <MenuItem fx:id="LogoutItem" onAction="#LogOutHandler" mnemonicParsing="false" text="Log out" />
+                          </items>
+                        </Menu>
+                    </menus>
+                     <padding>
+                        <Insets top="3.0" />
+                     </padding>
+                     <cursor>
+                        <Cursor fx:constant="DEFAULT" />
+                     </cursor>
+                     <opaqueInsets>
+                        <Insets />
+                     </opaqueInsets>
+                  </MenuBar>
+                   <ScrollPane fx:id="trendingScrollPane" fitToHeight="true" fitToWidth="true" hbarPolicy="NEVER" layoutX="394.0" layoutY="263.0" prefHeight="190.0" prefWidth="492.0" styleClass="custom-scroll" vbarPolicy="NEVER" AnchorPane.leftAnchor="394.0" AnchorPane.rightAnchor="394.0" AnchorPane.topAnchor="263.0">
+
+                       <content>
+                           <HBox fx:id="trendingContainer" alignment="TOP_RIGHT" prefHeight="188.0" prefWidth="882.0" spacing="5.0" style="-fx-background-color: rgba(0, 0, 0, 0.84); -fx-border-style: none;">
+                               <children>
+                                   <ImageView fitHeight="207.0" fitWidth="141.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                           <Image url="@PosterFilm/Trending/HutangNyawa.jpg" />
+                                       </image>
+                                   </ImageView>
+                                   <ImageView fitHeight="237.0" fitWidth="129.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                           <Image url="@PosterFilm/Trending/Inception.jpg" />
+                                       </image>
+                                   </ImageView>
+                                   <ImageView fitHeight="187.0" fitWidth="188.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                           <Image url="@PosterFilm/Trending/Sayap_Sayap_Patah.jpg" />
+                                       </image>
+                                   </ImageView>
+                                   <ImageView fitHeight="188.0" fitWidth="150.0" pickOnBounds="true" preserveRatio="true" />
+                                   <ImageView fitHeight="188.0" fitWidth="150.0" pickOnBounds="true" preserveRatio="true" />
+                                   <ImageView fitHeight="188.0" fitWidth="150.0" pickOnBounds="true" preserveRatio="true" />
+                               </children>
+                           </HBox>
+                       </content>
+                   </ScrollPane>
+
+                   <Button layoutX="370.0" layoutY="263.0" mnemonicParsing="false" prefHeight="189.0" prefWidth="25.0" text="&lt;" />
+                  <Button layoutX="881.0" layoutY="262.0" mnemonicParsing="false" prefHeight="190.0" prefWidth="25.0" text="&gt;" />
+                  <Label layoutX="384.0" layoutY="222.0" prefHeight="33.0" prefWidth="198.0" text="Trending Now!!" textFill="WHITE">
+                     <font>
+                        <Font name="Arial Black" size="23.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="137.0" layoutY="475.0" text="Horor" textFill="#f8f5f5" AnchorPane.bottomAnchor="791.0" AnchorPane.leftAnchor="137.0" AnchorPane.rightAnchor="1040.0" AnchorPane.topAnchor="475.0">
+                     <font>
+                        <Font name="Arial Black" size="32.0" />
+                     </font>
+                  </Label>
+                  <FlowPane layoutX="128.0" layoutY="533.0" prefHeight="200.0" prefWidth="1019.0" AnchorPane.bottomAnchor="578.0" AnchorPane.leftAnchor="128.0" AnchorPane.rightAnchor="128.0" AnchorPane.topAnchor="533.0">
+                     <children>
+                        <HBox prefHeight="202.0" prefWidth="1019.0" spacing="10.0">
+                           <children>
+                              <ImageView fitHeight="200.0" fitWidth="170.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@PosterFilm/Horor/Horor1.jpeg" />
+                                 </image>
+                              </ImageView>
+                              <ImageView fitHeight="200.0" fitWidth="170.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@PosterFilm/Horor/Jalangkung.jpg" />
+                                 </image>
+                              </ImageView>
+                              <ImageView fitHeight="200.0" fitWidth="170.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@PosterFilm/Horor/Kuyang.jpg" />
+                                 </image>
+                              </ImageView>
+                              <ImageView fitHeight="200.0" fitWidth="170.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@PosterFilm/Horor/WaktuMaghrib.jpg" />
+                                 </image>
+                              </ImageView>
+                              <ImageView fitHeight="200.0" fitWidth="170.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@PosterFilm/Horor/Sijin.jpg" />
+                                 </image>
+                              </ImageView>
+                              <ImageView fitHeight="200.0" fitWidth="170.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@PosterFilm/Horor/SiksaKubur.jpg" />
+                                 </image>
+                              </ImageView>
+                           </children>
+                        </HBox>
+                     </children>
+                  </FlowPane>
+                  <Label layoutX="139.0" layoutY="768.0" text="Comedy" textFill="#f8f5f5">
+                     <font>
+                        <Font name="Arial Black" size="32.0" />
+                     </font>
+                  </Label>
+                  <FlowPane layoutX="117.0" layoutY="835.0" prefHeight="202.0" prefWidth="1019.0" AnchorPane.bottomAnchor="276.0" AnchorPane.leftAnchor="117.0" AnchorPane.rightAnchor="139.0" AnchorPane.topAnchor="835.0">
+                     <children>
+                        <HBox prefHeight="202.0" prefWidth="1019.0" spacing="10.0">
+                           <children>
+                              <ImageView fitHeight="200.0" fitWidth="170.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@PosterFilm/Comedy/BajajBajuri.jpg" />
+                                 </image>
+                              </ImageView>
+                              <ImageView fitHeight="200.0" fitWidth="170.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@PosterFilm/Comedy/Arthur.jpg" />
+                                 </image>
+                              </ImageView>
+                              <ImageView fitHeight="200.0" fitWidth="170.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@PosterFilm/Comedy/BacktToTheFuture.jpg" />
+                                 </image>
+                              </ImageView>
+                              <ImageView fitHeight="200.0" fitWidth="162.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@PosterFilm/Comedy/Partikelir.jpg" />
+                                 </image>
+                              </ImageView>
+                              <ImageView fitHeight="200.0" fitWidth="170.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@PosterFilm/Comedy/TheKingComedian.jpg" />
+                                 </image>
+                              </ImageView>
+                              <ImageView fitHeight="200.0" fitWidth="170.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@PosterFilm/Comedy/PremanPensiun.jpg" />
+                                 </image>
+                              </ImageView>
+                              <ImageView fitHeight="200.0" fitWidth="170.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@PosterFilm/Comedy/JohnyEnglish.jpg" />
+                                 </image>
+                              </ImageView>
+                           </children>
+                        </HBox>
+                     </children>
+                  </FlowPane>
+               </children>
+            </AnchorPane>
+        </content>
+      </ScrollPane>
+   </children>
+</AnchorPane>

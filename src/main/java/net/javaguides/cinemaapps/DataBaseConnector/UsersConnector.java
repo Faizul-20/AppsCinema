@@ -6,17 +6,18 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 
 public class UsersConnector extends Connect {
-    private static final String DATA_LINK_USER = "jdbc:sqlite:DataBase/Akun.db";
-    private static final String USERNAME_SEARCH = "SELECT * FROM users WHERE username = ? AND password = ?";
-    private static final String SIGN_UP_DATA = "INSERT INTO users (username, email, password) VALUES (?, ?, ?)";
-    private static final String QUERY_USERNAME_CHECK = "SELECT COUNT(*) FROM users WHERE username = ?";
+    private static final String DATA_LINK_USER = "jdbc:sqlite:DataBase/Users.db";
+    private static final String USERNAME_SEARCH = "SELECT * FROM Akun WHERE username = ? AND password = ?";
+    private static final String SIGN_UP_DATA = "INSERT INTO Akun (username, email, password) VALUES (?, ?, ?)";
+    private static final String QUERY_USERNAME_CHECK = "SELECT COUNT(*) FROM Akun WHERE username = ?";
 
     @Override
     public void ConnectData() {
         try (Connection conn = DriverManager.getConnection(DATA_LINK_USER)) {
             Statement stmt = conn.createStatement();
-            stmt.execute("PRAGMA journal_mode=WAL;");  // Mengaktifkan WAL mode untuk SQLite
-            System.out.println("Database Terhubung dan WAL mode diaktifkan");
+            //stmt.execute("PRAGMA journal_mode=WAL;");  // Mengaktifkan WAL mode untuk SQLite
+           // System.out.println("Database Terhubung dan WAL mode diaktifkan");
+            System.out.println("DataBase Terhubung");
         } catch (SQLException e) {
             Logger.getLogger(getClass().getName()).log(Level.SEVERE, "Database User Tidak Ditemukan!!!", e);
         }
@@ -31,6 +32,7 @@ public class UsersConnector extends Connect {
             ResultSet rs = statement.executeQuery();
             return rs.next();
         } catch (SQLException e) {
+            System.out.println("Login Gagal!!");
             e.printStackTrace();
             return false;
         }

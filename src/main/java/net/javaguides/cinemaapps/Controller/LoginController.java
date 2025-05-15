@@ -44,8 +44,9 @@ public class LoginController {
         LoginButton.setOnAction(e->{
             boolean LoginResult = User.LoginCheck(UsernameText.getText(),Passwordfield.getText());
             if (LoginResult){
-                WarningLabel.setText("Login Berhasil");
-                WarningLabel.setVisible(true);
+                SceneController Scene = new SceneController();
+                //Stage PrimaryStage = new Stage();
+                Scene.SceneChange(SceneController.getHomePage(),SceneController.getStyleHomepage());
             }else {
                 WarningLabel.setText("Password Kamu Salah!!!");
                 WarningLabel.setVisible(true);
@@ -56,7 +57,7 @@ public class LoginController {
     @FXML
     public void SignUpHandler(){
         SceneController Scene = new SceneController();
-        Stage PrimaryStage = new Stage();
+        //Stage PrimaryStage = new Stage();
         SignUpButton.setOnAction(event->{
             Scene.SceneChange(event,SceneController.getSignUpPage());
         });
